@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/domain/entities/message.dart';
 
 class MyMessageBubble extends StatelessWidget {
-  const MyMessageBubble({super.key});
+  //cariable atomica  de la identidad menssage
+  final Message message;
+  const MyMessageBubble(
+      {super.key,
+      //se añade la variable al constructor
+      required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +22,9 @@ class MyMessageBubble extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'ya no le se a la ingenieria ppippipip',
+              message.text,
               style: TextStyle(color: Colors.white),
             ),
           ),
